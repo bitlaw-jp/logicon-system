@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=980,user-scalable=yes">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="robots" content="noindex">
+<title>論理憲法</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript" ></script>
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="qa.js"></script>
+<style type="text/css">
+<!--
+body {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	background: white;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+#ftbox {
+	position: absolute;
+	bottom: 0;
+	height: 40px;
+	text-align: center;
+	width: 100%;
+	border-top: 1px dotted #555;
+	padding: 20px 0;
+}
+
+/* ナビゲーション */
+#nav {
+	position: fixed;
+	right: 40px;
+}
+#nav li {
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	background: gray;
+	cursor: pointer;
+	list-style: none;
+	margin-bottom: 10px;
+}
+#nav li.selected {
+	background: red;
+}
+
+/* コンテンツ配置 */
+#cntarea {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+#cntinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.cnt {
+	width: 750px;
+	height: 500px;
+	margin: 0 auto;
+
+}
+.cnt h1 {
+	color: black;/*#009fbf;*/
+	text-align: center;
+	margin: -80px auto 20px auto;
+	font-size: 40px;
+}
+.inner {
+	height: 500px;
+	/*background: url(bgline.png) no-repeat left top;*/
+}
+
+/* コンテンツ中身 */
+.area1,
+.area2,
+.area3 {
+	position: relative;
+}
+/*.area1 ul li {
+width: 80px;
+height: 80px;
+margin: 30px 51px 0 0;
+padding: 155px 0 0 0;
+text-align: center;
+float: left;
+background: #005293;
+border-radius: 90px;
+-webkit-border-radius: 90px;
+-moz-border-radius: 90px;
+opacity: 0;
+filter: alpha(opacity=0);
+-ms-filter: "alpha(opacity=0)";
+-moz-opacity: 0;
+-khtml-opacity: 0;
+list-style: none;
+}*/
+#menu ul{
+    position: relative;
+    left: 47%;
+    float:left;
+    list-style: none; 
+    padding:0;
+    margin:0;
+}
+#menu li{   
+    padding: 0; 
+    margin: 0;
+    position: relative;
+    left: -50%;
+    float:left;
+}
+#menu li a{
+    display: block;
+    width: 100px;
+    /*border-bottom: 2px dotted #555;*/
+    text-decoration: none;
+    color: black;
+    padding: 0px 0px 0px 20px;
+    margin: 0px 2px;
+    text-align: center;
+    font-size: 16px;
+}
+#menu li a:hover{
+    color: gray;
+}
+
+.area2 p,
+.area3 p {
+	text-align: center;
+	color: #7a5b28;
+	font-size: 130%;
+}
+
+.under {
+	position: absolute;
+	top: 400px;
+	left: 310px; /*325中央に揃わないためtopと分ける*/
+	cursor: pointer;
+}
+.top {
+	position: absolute;
+	top: 485px;
+	left: 340px; /*325*/
+	cursor: pointer;
+}
+.under:hover,
+.top:hover,
+.link:hover {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	-ms-filter: "alpha(opacity=60)";
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+}
+
+/*セレクトボックス*/
+.custom select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-indent: 0.2em;
+    background:white url(select-arrow.png) no-repeat; /*images/select-arrow.png*/
+    background-size:25px 15px;
+    background-position: right center;
+    border-radius: 0px;
+    /*border: 5px solid black;*/
+    height: 70px;
+    width: 260px;
+    line-height: 40px;
+    font-size: 38px;
+    vertical-align: bottom;
+    border:1px solid #CCC;
+    /*margin-bottom:5px;*/
+}
+.custom1 select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-indent: 0.2em;
+    background:white url(select-arrow.png) no-repeat; /*images/select-arrow.png*/
+    background-size:25px 15px;
+    background-position: right center;
+    border-radius: 0px;
+    /*border: 5px solid black;*/
+    height: 70px;
+    width: 190px;
+    line-height: 40px;
+    font-size: 38px;
+    vertical-align: bottom;
+    border:1px solid #CCC;
+    /*margin-bottom:5px;*/
+}
+.form {
+    font-size: 50px;
+}
+#target {
+    font-size: 40px;
+}
+
+.item {
+	float: left;
+	width: 330px;
+	height: 470px;
+	/*background-color: #CECECE;*/
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	margin: 10px;
+}
+.item a {
+	position: absolute;
+	bottom: 0;
+}
+.item h2 {
+	font-size: 20px;
+	padding-bottom: 4px;
+}
+.item-container {
+    overflow:hidden;
+    *zoom:1;
+    &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+-->
+</style>
+
+<script>
+$(function () {
+
+// 変数定義
+var cntarea  = $("#cntarea"),
+    cntinner = $("#cntinner"),
+	cnt      = $(".cnt"),
+    nav      = $("#nav ul"),
+	winht,
+	padht,
+	cntmgn,
+	numb     = 0;
+
+// ページリロード時とリサイズ時にスタイル設定とエリアの移動を実行
+areaSet();
+setTimeout( function(){
+  $(".area1 ul li").each(function(i){
+    $(this).delay(100 * i).animate({"opacity":"1"}, 1000, "easeOutExpo");
+  });
+}, 600);
+$(window).resize(function(){
+    areaSet();
+	moveArea();
+});
+
+// スタイル設定する関数
+function areaSet() {
+	winht = $(window).height();
+	padht = ( winht - ($(".cnt").height()) - ($("#ftbox").height() * 2) )/2;
+    navht = ( winht - ($("#nav ul").height()) - ($("#ftbox").height() * 2) ) / 2;
+	cnt.css({"padding-top":padht,"padding-bottom":padht});
+	$("#nav").css("top", navht);
+    cntarea.css("height", winht);
+}
+
+// ナビクリック時、selecetdの操作とエリアを移動
+nav.children("li").click(function(){
+	nav.children("li").removeClass("selected");
+	$(this).addClass("selected");
+	moveArea();
+	var numb = nav.children("li").index(nav.children("li.selected"));
+	motionArea(numb);
+});
+
+// 下矢印クリック時、ナビのselected操作とエリア移動
+$(".under").click(function(){
+    var navslect = nav.children("li").index(nav.children("li.selected")) + 1;
+	nav.children("li").removeClass("selected");
+	nav.children("li").eq(navslect).addClass("selected");
+	moveArea();
+	var numb = nav.children("li").index(nav.children("li.selected"));
+	motionArea(numb);
+});
+$(".top").click(function(){
+	nav.children("li").removeClass("selected");
+	nav.children("li").eq(0).addClass("selected");
+	moveArea();
+	var numb = nav.children("li").index(nav.children("li.selected"));
+	motionArea(numb);
+});
+
+// エリアの移動関数
+function moveArea() {
+	var numb = nav.children("li").index(nav.children("li.selected"));
+	padht  = ( winht - ($(".cnt").height()) - ($("#ftbox").height() * 2) ) / 2;
+	cntmgn = $(".cnt").height() + (padht * 2);
+    cntmgn = -( numb * cntmgn );
+	cntinner.animate({"top": cntmgn}, 1000, "easeInOutSine");
+	// easeInOutBack
+    $("#cntbg1").animate({"top": cntmgn/2}, 1300, "easeInOutSine");
+}
+});
+</script>
+
+</head>
+<body onLoad="functionName()">
+	<div id="cntarea">
+		<div id="cntinner">
+			<div class="cnt">
+				<div class="inner">
+					<h1>憲法(日本国).</h1>
+					<div class="area1">
+						<div id="menu">
+							<ul>
+								<li><a href="about.html">About</a></li>
+								<li><a href="https://github.com/bitlaw-jp/the-constitution-of-japan">GitHub</a></li>
+								<!-- <li></li> -->
+							</ul>
+						</div>
+							<br><br><br>
+						<center>
+							<p style="color:gray;">2つの選択ボックスから調べたい単語を選び、</p>
+							<p style="color:gray;">「質問する」ボタンを押してください。</p>
+							<br><br>
+						<form name="formName" method="post">
+						    <span class="form">|-? </span>
+						    <span class="custom1">
+						        <select name = "selectName1" onChange="functionName()">
+						            <option value = "def">def</option>
+						            <option value = "can">can</option>
+						            <option value = "can_not">can_not</option>
+						        </select>
+						    </span>
+						    <span class="form"> (</span>
+						    <span class="custom">
+						        <select name = "selectName2" onChange="functionName2()">
+						        </select>
+						    </span>
+						    <span class="form"> , X, N).</span>
+							<br><br>
+						    <p><div id="target">天皇ってどういうもの？</div></p>
+						</form>
+						</center>
+						<br><br>
+						<p onClick="questionBtn()"><img class="under" src="q.png" style="padding-top:50px;"></p>
+					</div><!-- area1 -->
+				</div><!-- inner -->
+			</div><!-- cnt -->
+
+
+			<div class="cnt">
+				<div class="inner">
+					<!-- <h1>実行結果</h1> -->
+					<div class="area2">
+						<div class="item-container">
+  							<div class="item">
+  								<h2>Prolog実行結果</h2>
+  								<div id="target2"></div>
+  								<a href="https://github.com/bitlaw-jp/the-constitution-of-japan/blob/master/rules.pl"><img class="link" src="source.png"></a>
+  								<!-- 編集についての説明に飛ばしたほうがいいかも -->
+  							</div>
+  							<div class="item">
+  								<h2>回答</h2>
+  								<div id="result"></div>
+  								<a href="http://law.e-gov.go.jp/htmldata/S21/S21KE000.html"><img class="link" src="original.png"></a>
+  							</div>
+						</div>
+						<img class="top" src="top.png" style="padding-top:60px;">
+					</div>
+				</div>
+			</div>
+<!-- <div class="cnt">
+<div class="inner">
+<h1>回答</h1>
+<div class="area3">
+<p>I ate delicious cookies I got at Halloween.<br>
+Give me candy because I want to eat more!</p>
+<img class="top" src="top.png">
+</div>
+</div>
+</div> -->
+		</div><!-- cntinner -->
+	</div><!-- cntarea -->
+
+
+	<div id="nav">
+		<ul>
+			<li class="selected"></li>
+			<li></li>
+			<!-- <li></li> -->
+		</ul>
+	</div>
+
+<div id="ftbox"><a style="color: black;text-decoration: none;"href="#">&copy;gitlaw.jp</a></div>
+</body>
+</html>
