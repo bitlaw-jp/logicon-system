@@ -210,7 +210,7 @@ list-style: none;
 .item {
 	float: left;
 	width: 330px;
-	height: 470px;
+	height: 476px;
 	/*background-color: #CECECE;*/
 	display: inline-block;
 	vertical-align: top;
@@ -330,12 +330,11 @@ function moveArea() {
 						</div>
 							<br><br><br>
 						<center>
-							<p style="color:gray;">2つの選択ボックスから調べたい単語を選び、</p>
-							<p style="color:gray;">「質問する」ボタンを押してください。</p>
+							<p style="color:gray;">2つの選択ボックスから調べたい単語を選び、<br>「質問する」ボタンを押してください</p>
 							<br><br>
 						<form name="formName" method="post">
-						    <span class="form">|-? </span>
-						    <span class="custom1">
+						    <span class="form" style="font-weight:bold;">|-? </span>
+						    <span class="custom1"  style="font-weight:bold;">
 						        <select name = "selectName1" onChange="functionName()">
 						            <option value = "def">def</option>
 						            <option value = "can">can</option>
@@ -343,13 +342,13 @@ function moveArea() {
 						        </select>
 						    </span>
 						    <span class="form"> (</span>
-						    <span class="custom">
+						    <span class="custom"  style="font-weight:bold;">
 						        <select name = "selectName2" onChange="functionName2()">
 						        </select>
 						    </span>
-						    <span class="form"> , X, N).</span>
+						    <span class="form"  style="font-weight:bold;"> , X, N).</span>
 							<br><br>
-						    <p><div id="target">天皇ってどういうもの？</div></p>
+						    <p><div id="target" style="color:gray;">天皇ってなに？</div></p>
 						</form>
 						</center>
 						<br><br>
@@ -365,13 +364,13 @@ function moveArea() {
 					<div class="area2">
 						<div class="item-container">
   							<div class="item">
-  								<h2>Prolog実行結果</h2>
+  								<h2>プログラム実行結果</h2>
   								<div id="target2"></div>
   								<a href="https://github.com/bitlaw-jp/the-constitution-of-japan/blob/master/rules.pl"><img class="link" src="source.png"></a>
   								<!-- 編集についての説明に飛ばしたほうがいいかも -->
   							</div>
   							<div class="item">
-  								<h2>回答</h2>
+  								<h2>プログラムの意味</h2>
   								<div id="result"></div>
   								<a href="http://law.e-gov.go.jp/htmldata/S21/S21KE000.html"><img class="link" src="original.png"></a>
   							</div>
@@ -402,6 +401,6 @@ Give me candy because I want to eat more!</p>
 		</ul>
 	</div>
 
-<div id="ftbox"><a style="color: black;text-decoration: none;"href="#">&copy;gitlaw.jp</a></div>
+<!-- <div id="ftbox"><a style="color: black;text-decoration: none;"href="#">&copy;gitlaw.jp</a></div> -->
 </body>
 </html>

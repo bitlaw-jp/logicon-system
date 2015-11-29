@@ -1,11 +1,10 @@
 var question = new Array("| ?-def(天皇, X, N).<br>", 
                           "X       = 象徴(日本国),",
-                          "N       = 1",
+                          "N       = 1;",
                           "X       = 象徴(日本国民統合),",
-                          "N       = 1",
-                          "no");
+                          "N       = 1");
 
-var result = "天皇は日本国の象徴です。<br>天皇は日本国民統合の象徴です。<br>これらは第１条で規定されています。";
+var result = "天皇ってなに？<br><br>天皇は日本国の象徴です。(第１条)<br>天皇は日本国民統合の象徴です。(第１条)";
 
 
 function functionName() {
@@ -16,14 +15,14 @@ function functionName() {
   var ele = document.getElementById("target"); // 自然言語形式の質問に置き換える
 
   if (select1.options[select1.selectedIndex].value == "def") {
-    ele.innerHTML = "天皇ってどういうもの？";
+    ele.innerHTML = "天皇ってなに？";
     select2.options[0] = new Option("天皇");
     select2.options[1] = new Option("国会");
     select2.options[2] = new Option("内閣");
   }
 
   else if (select1.options[select1.selectedIndex].value == "can") {
-    ele.innerHTML = "国民は何をすることができる？";
+    ele.innerHTML = "国民はなにをすることができる？";
     select2.options[0] = new Option("国民");
     select2.options[1] = new Option("内閣総理大臣");
     select2.options[2] = new Option("天皇");
@@ -31,7 +30,7 @@ function functionName() {
   }
 
   else if (select1.options[select1.selectedIndex].value == "can_not") {
-    ele.innerHTML = "国民は何をすることができない？";
+    ele.innerHTML = "国民はなにをすることができない？";
     select2.options[0] = new Option("国民");
     select2.options[1] = new Option("裁判官");
   }
@@ -48,14 +47,13 @@ function functionName2() {
 
   if (select1Val == "def") {
     if (select2Val == "天皇") {
-      ele.innerHTML = "天皇ってどういうもの？";
+      ele.innerHTML = "天皇ってなに？";
       question = new Array("| ?-def(天皇, X, N).<br>", 
                           "X       = 象徴(日本国),",
-                          "N       = 1",
+                          "N       = 1;",
                           "X       = 象徴(日本国民統合),",
-                          "N       = 1",
-                          "no");
-      result = "天皇は日本国の象徴です。<br>天皇は日本国民統合の象徴です。<br>これらは第１条で規定されています。";
+                          "N       = 1");
+      result = "天皇ってなに？<br><br>天皇は日本国の象徴です。(第１条)<br>天皇は日本国民統合の象徴です。(第１条)";
     } else if (select2Val == "国会") {
       ele.innerHTML = "国会ってどういうもの？";
       question = new Array("def(国会, X, N).<br>",
@@ -66,28 +64,38 @@ function functionName2() {
                           "X       = 構成する(両議院),",
                           "N       = 42;",
                           "X       = 設置(弾劾裁判所(組織(両議院議員)),for(裁判(罷免の訴追を受けた裁判官))),",
-                          "N       = 64-1;",
-                          "no");
+                          "N       = 64-1");
+      result = "国会ってどういうもの？<br><br>国会は国権の最高機関です。(第41条)<br>国会は唯一の立法機関です。(第41条)<br>国会は両議院で構成されています。(第42条)<br>両議院議員で組織する弾劾裁判所が設置されます。(第64条1項)";
     } else if (select2Val == "内閣") {
       ele.innerHTML = "内閣ってどういうもの？";
+      question = new Array("def(内閣, X, N).<br>",
+                          "X       = 組織する(その首長たる内閣総理大臣及びその他の国務大臣(by(法律))),",
+                          "N       = 66-1");
+      result = "内閣ってどういうもの？<br><br>内閣は法律によりその首長たる内閣総理大臣及びその他の国務大臣で組織されます(第66条1項)";
     }
-  } 
+  }
+
   else if (select1Val == "can") {
     if (select2Val == "国民") {
-      ele.innerHTML = "国民は何をすることができる？";
+      ele.innerHTML = "国民はなにをすることができる？";
+      question = new Array("def(内閣, X, N).<br>",
+                          "X       = 組織する(その首長たる内閣総理大臣及びその他の国務大臣(by(法律))),",
+                          "N       = 66-1");
+      result = "内閣は法律によりその首長たる内閣総理大臣及びその他の国務大臣で組織されます(第66条1項)";
     } else if (select2Val == "内閣総理大臣") {
-      ele.innerHTML = "内閣総理大臣は何をすることができる？";
+      ele.innerHTML = "内閣総理大臣はなにをすることができる？";
     } else if (select2Val == "天皇") {
       ele.innerHTML = "天皇は何をすることができる？";
     } else if (select2Val == "国会議員") {
-      ele.innerHTML = "国会議員は何をすることができる？";
+      ele.innerHTML = "国会議員はなにをすることができる？";
     }
-  } 
+  }
+
   else if (select1Val == "can_not") {
     if (select2Val == "国民") {
-      ele.innerHTML = "国民は何をすることができない？";
+      ele.innerHTML = "国民はなにをすることができない？";
     } else if (select2Val == "裁判官") {
-      ele.innerHTML = "裁判官は何をすることができない？";
+      ele.innerHTML = "裁判官はなにをすることができない？";
     }
   }
 }
