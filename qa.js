@@ -23,27 +23,56 @@ function functionName() {
 
   else if (select1.options[select1.selectedIndex].value == "by") {
     ele.innerHTML = "天皇の地位は何で定められている？";
+    question = new Array("by(天皇, X, N).<br>",
+                          "X       = 基づく(地位,日本国民の総意),",
+                          "N       = 1");
+      result = "天皇の地位は何で定められている？<br><br>天皇の地位は日本国民の総意に基づいています。(第1条)";
     select2.options[0] = new Option("天皇");
     select2.options[1] = new Option("皇位");
-    select2.options[1] = new Option("摂政");
+    select2.options[2] = new Option("摂政");
+    select2.options[3] = new Option("皇室への財産譲渡");
+    select2.options[4] = new Option("皇室の財産譲受");
+    select2.options[5] = new Option("皇室の財産賜与");
   }
 
   else if (select1.options[select1.selectedIndex].value == "need") {
     ele.innerHTML = "国事行為に必要なものは？";
+    question = new Array("need(国事行為, X, N).<br>",
+                          "X       = 内閣の助言,",
+                          "N       = 3;",
+                          "X       = 内閣の承認,",
+                          "N       = 3");
+      result = "国事行為に必要なものは？<br><br>内閣の助言と内閣の承認です。(第3条)";
     select2.options[0] = new Option("国事行為");
     select2.options[1] = new Option("");
   }
 
   else if (select1.options[select1.selectedIndex].value == "res") {
     ele.innerHTML = "国事行為の責任はどこにありますか？";
+    question = new Array("res(国事行為, X, N).<br>",
+                          "X       = 責任(内閣),",
+                          "N       = 3");
+      result = "国事行為の責任はどこにありますか？<br><br>内閣の責任です。(第3条)";
     select2.options[0] = new Option("国事行為");
     select2.options[1] = new Option("");
   }
 
   else if (select1.options[select1.selectedIndex].value == "do") {
     ele.innerHTML = "天皇はなにをするの？";
+    question = new Array("do(天皇, X, N).<br>",
+                          "X       = 国事行為,",
+                          "N       = 4-1;",
+                          "X       = 任命(内閣総理大臣,by(国会の指名)),",
+                          "N       = 6-1;",
+                          "X       = 任命(最高裁判所裁判長,by(内閣の指名)),",
+                          "N       = 6-2;",
+                          "X       = 国事行為(by(内閣の助言と承認),for(国民のために)),",
+                          "N       = 7;",
+                          "X       = 公布(憲法(case(承認(96-1)),on(名(国民)),for(憲法と一体を成すもの))),",
+                          "N       = 96-2");
+      result = "天皇はなにをするの？<br><br>国事行為(第4条第1項)<br>国会の指名による内閣総理大臣の任命(第6条第1項)<br>国民のための内閣の助言と承認による国事行為(第7条)<br>96-1の承認を得た場合、国民の名での憲法と一体を成すものとしての憲法の公布(第96条第2項)";
     select2.options[0] = new Option("天皇");
-    select2.options[1] = new Option("");
+    select2.options[1] = new Option("摂政");
   }
 
   else if (select1.options[select1.selectedIndex].value == "have_not") {
@@ -58,7 +87,31 @@ function functionName() {
 
   else if (select1.options[select1.selectedIndex].value == "can") {
     ele.innerHTML = "天皇ができることは？";
+    question = new Array("can(天皇, X, N).<br>",
+                          "X       = 委任(国事行為,by(法律)),",
+                          "N       = 4-2");
+      result = "天皇ができることは？<br><br>法律により、国事行為の委任ができます。(第4条第2項)";
     select2.options[0] = new Option("天皇");
+    select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "apply") {
+    ele.innerHTML = "摂政について関係する規定は？";
+    question = new Array("apply(摂政, X, N).<br>",
+                          "X       = 4-1,",
+                          "N       = 5");
+      result = "摂政について関係する規定は？<br><br>第4条第1項があります。(第5条)";
+    select2.options[0] = new Option("摂政");
+    select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "call") {
+    ele.innerHTML = "日本国民が求めるものは？";
+    question = new Array("call(日本国民, X, N).<br>",
+                          "X       = 正義と秩序を基調とする国際平和,",
+                          "N       = 9-1");
+      result = "日本国民が求めるものは？<br><br>日本国民は正義と秩序を基調とする国際平和を求めます。(第9条第1項)";
+    select2.options[0] = new Option("日本国民");
     select2.options[1] = new Option("");
   }
 }
@@ -135,6 +188,24 @@ function functionName2() {
                           "X       = 定める(皇室典範),",
                           "N       = 5");
       result = "摂政は何で定められている？<br><br>皇室典範で定められています(第5条)";
+    } else if (select2Val == "皇室への財産譲渡") {
+      ele.innerHTML = "皇室への財産譲渡は何に基づく？";
+      question = new Array("by(皇室への財産譲渡, X, N).<br>",
+                          "X       = 国会の議決,",
+                          "N       = 8");
+      result = "皇室への財産譲渡は何に基づく？<br><br>皇室への財産譲渡は国会の議決に基づきます。(第8条)";
+    } else if (select2Val == "皇室の財産譲受") {
+      ele.innerHTML = "皇室の財産譲受は何に基づく？";
+      question = new Array("by(皇室の財産譲受, X, N).<br>",
+                          "X       = 国会の議決,",
+                          "N       = 8");
+      result = "皇室の財産譲受は何に基づく？<br><br>皇室の財産譲受は国会の議決に基づきます。(第8条)";
+    } else if (select2Val == "皇室の財産賜与") {
+      ele.innerHTML = "皇室の財産賜与は何に基づく？";
+      question = new Array("by(皇室の財産賜与, X, N).<br>",
+                          "X       = 国会の議決,",
+                          "N       = 8");
+      result = "皇室の財産賜与は何に基づく？<br><br>皇室の財産賜与は国会の議決に基づきます。(第8条)";
     }
   }
 
@@ -179,8 +250,12 @@ function functionName2() {
                           "X       = 公布(憲法(case(承認(96-1)),on(名(国民)),for(憲法と一体を成すもの))),",
                           "N       = 96-2");
       result = "天皇はなにをするの？<br><br>国事行為(第4条第1項)<br>国会の指名による内閣総理大臣の任命(第6条第1項)<br>国民のための内閣の助言と承認による国事行為(第7条)<br>96-1の承認を得た場合、国民の名での憲法と一体を成すものとしての憲法の公布(第96条第2項)";
-    } else if (select2Val == "裁判官") {
-      ele.innerHTML = "裁判官はなにをすることができない？";
+    } else if (select2Val == "摂政") {
+      ele.innerHTML = "摂政では何が行われる？";
+      question = new Array("do(摂政, X, N).<br>",
+                          "X       = 国事行為(on(天皇の名)),",
+                          "N       = 5");
+      result = "摂政では何が行われる？<br><br>天皇の名で国事行為が行われます。(第5条)";
     }
   }
 
@@ -203,6 +278,30 @@ function functionName2() {
                           "X       = 委任(国事行為,by(法律)),",
                           "N       = 4-2");
       result = "天皇ができることは？<br><br>法律により、国事行為の委任ができます。(第4条第2項)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "apply") {
+    if (select2Val == "摂政") {
+      ele.innerHTML = "摂政について関係する規定は？";
+      question = new Array("apply(摂政, X, N).<br>",
+                          "X       = 4-1,",
+                          "N       = 5");
+      result = "摂政について関係する規定は？<br><br>第4条第1項があります。(第5条)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "call") {
+    if (select2Val == "日本国民") {
+      ele.innerHTML = "日本国民が求めるものは？";
+    question = new Array("call(日本国民, X, N).<br>",
+                          "X       = 正義と秩序を基調とする国際平和,",
+                          "N       = 9-1");
+      result = "日本国民が求めるものは？<br><br>日本国民は正義と秩序を基調とする国際平和を求めます。(第9条第1項)";
     } else if (select2Val == "裁判官") {
       ele.innerHTML = "裁判官はなにをすることができない？";
     }
