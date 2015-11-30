@@ -33,6 +33,7 @@ function functionName() {
     select2.options[3] = new Option("皇室への財産譲渡");
     select2.options[4] = new Option("皇室の財産譲受");
     select2.options[5] = new Option("皇室の財産賜与");
+    select2.options[6] = new Option("日本国民の要件");
   }
 
   else if (select1.options[select1.selectedIndex].value == "need") {
@@ -227,6 +228,12 @@ function functionName2() {
                           "X       = 国会の議決,",
                           "N       = 8");
       result = "皇室の財産賜与は何に基づく？<br><br>皇室の財産賜与は国会の議決に基づきます。(第8条)";
+    } else if (select2Val == "日本国民の要件") {
+      ele.innerHTML = "日本国民の要件は何で定められている？";
+      question = new Array("by(日本国民の要件, X, N).<br>",
+                          "X       = 法律で定める,",
+                          "N       = 10");
+      result = "日本国民の要件は何で定められている？<br><br>日本国民の要件は法律で定められています。(第10条)";
     }
   }
 
