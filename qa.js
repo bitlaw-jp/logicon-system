@@ -82,7 +82,7 @@ function functionName() {
                           "N       = 4-1");
       result = "天皇が持たないものは？<br><br>国政に関する権能です。(第4条第1項)";
     select2.options[0] = new Option("天皇");
-    select2.options[1] = new Option("");
+    select2.options[1] = new Option("日本");
   }
 
   else if (select1.options[select1.selectedIndex].value == "can") {
@@ -112,7 +112,28 @@ function functionName() {
                           "N       = 9-1");
       result = "日本国民が求めるものは？<br><br>日本国民は正義と秩序を基調とする国際平和を求めます。(第9条第1項)";
     select2.options[0] = new Option("日本国民");
-    select2.options[1] = new Option("");
+    // select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "renounce") {
+    ele.innerHTML = "日本国民が放棄するものは？";
+    question = new Array("renounce(日本国民, X, N).<br>",
+                          "X       = 国権の発動たる戦争(as(国際紛争を解決する手段)),",
+                          "X       = 武力による威嚇又は武力の行使(as(国際紛争を解決する手段)),",
+                          "N       = 9-1");
+      result = "日本国民が放棄するものは？<br><br>日本国民は国際紛争を解決する手段としての国権の発動たる戦争を放棄します。<br>日本国民は国際紛争を解決する手段としての武力による威嚇又は武力の行使を放棄します。(第9条第1項)";
+    select2.options[0] = new Option("日本国民");
+    // select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "not_recognize") {
+    ele.innerHTML = "日本では何が認められない？";
+    question = new Array("not_recognize(日本, X, N).<br>",
+                          "X       = 国の交戦権,",
+                          "N       = 9-2");
+      result = "日本では何が認められない？<br><br>日本では国の交戦権が認められません。(第9条第2項)";
+    select2.options[0] = new Option("日本");
+    // select2.options[1] = new Option("");
   }
 }
 
@@ -265,9 +286,13 @@ function functionName2() {
       question = new Array("have_not(天皇, X, N).<br>",
                           "X       = 国政に関する権能,",
                           "N       = 4-1");
-      result = "天皇が持たないものは？<br><br>国政に関する権能です。(第4条第1項)";
-    } else if (select2Val == "裁判官") {
-      ele.innerHTML = "裁判官はなにをすることができない？";
+      result = "天皇が持たないものは？<br><br>天皇は国政に関する権能を持ちません。(第4条第1項)";
+    } else if (select2Val == "日本") {
+      ele.innerHTML = "日本が持たないものは？";
+      question = new Array("have_not(日本, X, N).<br>",
+                          "X       = 陸海空軍その他の戦力,",
+                          "N       = 9-2");
+      result = "日本が持たないものは？<br><br>日本は陸海空軍その他の戦力を持ちません。(第9条第2項)";
     }
   }
 
@@ -302,6 +327,31 @@ function functionName2() {
                           "X       = 正義と秩序を基調とする国際平和,",
                           "N       = 9-1");
       result = "日本国民が求めるものは？<br><br>日本国民は正義と秩序を基調とする国際平和を求めます。(第9条第1項)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "renounce") {
+    if (select2Val == "日本国民") {
+      ele.innerHTML = "日本国民が放棄するものは？";
+    question = new Array("renounce(日本国民, X, N).<br>",
+                          "X       = 国権の発動たる戦争(as(国際紛争を解決する手段)),",
+                          "X       = 武力による威嚇又は武力の行使(as(国際紛争を解決する手段)),",
+                          "N       = 9-1");
+      result = "日本国民が放棄するものは？<br><br>日本国民は国際紛争を解決する手段としての国権の発動たる戦争を放棄します。<br>日本国民は国際紛争を解決する手段としての武力による威嚇又は武力の行使を放棄します。(第9条第1項)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "not_recognize") {
+    if (select2Val == "日本") {
+      ele.innerHTML = "日本では何が認められない？";
+    question = new Array("not_recognize(日本, X, N).<br>",
+                          "X       = 国の交戦権,",
+                          "N       = 9-2");
+      result = "日本では何が認められない？<br><br>日本では国の交戦権が認められません。(第9条第2項)";
     } else if (select2Val == "裁判官") {
       ele.innerHTML = "裁判官はなにをすることができない？";
     }
