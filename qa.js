@@ -19,6 +19,7 @@ function functionName() {
     select2.options[0] = new Option("天皇");
     select2.options[1] = new Option("皇位");
     select2.options[2] = new Option("国事行為");
+    select2.options[3] = new Option("基本的人権");
   }
 
   else if (select1.options[select1.selectedIndex].value == "by") {
@@ -136,6 +137,52 @@ function functionName() {
     select2.options[0] = new Option("日本");
     // select2.options[1] = new Option("");
   }
+
+  else if (select1.options[select1.selectedIndex].value == "not_be_prevented") {
+    ele.innerHTML = "国民は何を妨げられない？";
+    question = new Array("not_be_prevented(国民, X, N).<br>",
+                          "X       = 基本的人権の享有,",
+                          "N       = 11");
+      result = "国民は何を妨げられない？<br><br>国民は基本的人権の享有を妨げられません。(第11条)";
+    select2.options[0] = new Option("国民");
+    // select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "guarantee") {
+    ele.innerHTML = "憲法が保障するものは？";
+    question = new Array("guarantee(憲法, X, N).<br>",
+                          "X       = 基本的人権の享有,",
+                          "N       = 11",
+                          "X       = 成年者による普通選挙(公務員の選挙),",
+                          "N       = 15-3;",
+                          "X       = 思想及び良心の自由,",
+                          "N       = 19;",
+                          "X       = 信教の自由,",
+                          "N       = 20-1;",
+                          "X       = 集会の自由,",
+                          "N       = 21-1;",
+                          "X       = 結社の自由,",
+                          "N       = 21-1;",
+                          "X       = 言論の自由,",
+                          "N       = 21-1;",
+                          "X       = 出版の自由,",
+                          "N       = 21-1;",
+                          "X       = 表現の自由,",
+                          "N       = 21-1;",
+                          "X       = 学問の自由,",
+                          "N       = 23;",
+                          "X       = 団結権(for(勤労者)),",
+                          "N       = 28;",
+                          "X       = 団体交渉権(for(勤労者)),",
+                          "N       = 28;",
+                          "X       = 団体行動権(for(勤労者)),",
+                          "N       = 28;",
+                          "X       = 基本的人権(for(日本国民)),",
+                          "N       = 97;");
+      result = "憲法が保障するものは？<br><br>基本的人権の享有(第11条)<br>公務員の選挙での成年者による普通選挙(第15条第3項)<br>思想及び良心の自由(第19条)<br>信教の自由(第20条第1項)<br>集会の自由、結社の自由、言論の自由、出版の自由、表現の自由(第21条第1項)<br>学問の自由(第23条)<br>勤労者の団結権、勤労者の団体交渉権、勤労者の団体行動権(第28条)<br>日本国民の基本的人権(第97条)";
+    select2.options[0] = new Option("憲法");
+    // select2.options[1] = new Option("");
+  }
 }
 
 function functionName2() {
@@ -184,6 +231,16 @@ function functionName2() {
                           "X       = 儀式,",
                           "N       = 7;");
       result = "国事行為ってなに？<br><br>国事行為とは天皇の国事に関するすべての行為です。(第3条)<br>憲法改正,法律,政令,条約の公布、国会の召集、衆議院の解散、国会議員の総選挙の公示、国務大臣及び法律の定めるその他の官吏の任免、全権委任状及び公使の信任状の認証、大赦、特赦、減刑、刑の執行の免除、復権の認証、栄典の授与、批准書及び法律の定めるその他の外交文書の認証、外国の大使及び公使の接受、儀式があります。(第7条)";
+    } else if (select2Val == "基本的人権") {
+      ele.innerHTML = "基本的人権ってなに？";
+      question = new Array("def(基本的人権, X, N).<br>",
+                          "X       = 侵すことのできない永久の権利,",
+                          "N       = 11;",
+                          "X       = 成果(努力(自由獲得)),",
+                          "N       = 97;",
+                          "X       = 侵すことのできない永久の権利(for(国民(現在及び将来))),",
+                          "N       = 97;");
+      result = "基本的人権ってなに？<br><br>侵すことのできない永久の権利(第11条)<br>自由獲得の努力の成果、現在及び将来の国民の侵すことのできない永久の権利(第97条)";
     }
   }
 
@@ -359,6 +416,56 @@ function functionName2() {
                           "X       = 国の交戦権,",
                           "N       = 9-2");
       result = "日本では何が認められない？<br><br>日本では国の交戦権が認められません。(第9条第2項)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "not_be_prevented") {
+    if (select2Val == "国民") {
+      ele.innerHTML = "国民は何を妨げられない？";
+    question = new Array("not_be_prevented(国民, X, N).<br>",
+                          "X       = 基本的人権の享有,",
+                          "N       = 11");
+      result = "国民は何を妨げられない？<br><br>国民は基本的人権の享有を妨げられません。(第11条)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "guarantee") {
+    if (select2Val == "憲法") {
+      ele.innerHTML = "憲法が保障するものは？";
+    question = new Array("guarantee(憲法, X, N).<br>",
+                          "X       = 基本的人権の享有,",
+                          "N       = 11",
+                          "X       = 成年者による普通選挙(公務員の選挙),",
+                          "N       = 15-3;",
+                          "X       = 思想及び良心の自由,",
+                          "N       = 19;",
+                          "X       = 信教の自由,",
+                          "N       = 20-1;",
+                          "X       = 集会の自由,",
+                          "N       = 21-1;",
+                          "X       = 結社の自由,",
+                          "N       = 21-1;",
+                          "X       = 言論の自由,",
+                          "N       = 21-1;",
+                          "X       = 出版の自由,",
+                          "N       = 21-1;",
+                          "X       = 表現の自由,",
+                          "N       = 21-1;",
+                          "X       = 学問の自由,",
+                          "N       = 23;",
+                          "X       = 団結権(for(勤労者)),",
+                          "N       = 28;",
+                          "X       = 団体交渉権(for(勤労者)),",
+                          "N       = 28;",
+                          "X       = 団体行動権(for(勤労者)),",
+                          "N       = 28;",
+                          "X       = 基本的人権(for(日本国民)),",
+                          "N       = 97;");
+      result = "憲法が保障するものは？<br><br>基本的人権の享有(第11条)<br>公務員の選挙での成年者による普通選挙(第15条第3項)<br>思想及び良心の自由(第19条)<br>信教の自由(第20条第1項)<br>集会の自由、結社の自由、言論の自由、出版の自由、表現の自由(第21条第1項)<br>学問の自由(第23条)<br>勤労者の団結権、勤労者の団体交渉権、勤労者の団体行動権(第28条)<br>日本国民の基本的人権(第97条)";
     } else if (select2Val == "裁判官") {
       ele.innerHTML = "裁判官はなにをすることができない？";
     }
