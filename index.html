@@ -340,8 +340,8 @@ function moveArea() {
 					<div class="area1">
 						<div id="menu">
 							<ul>
-								<li><a href="about.html">About</a></li>
-								<li><a href="https://github.com/bitlaw-jp/the-constitution-of-japan">GitHub</a></li>
+								<li><a href="about.html" onClick=”ga(‘send’, ‘event’, ‘Inbound’, ‘click’, 'about');”>About</a></li>
+								<li><a href="https://github.com/bitlaw-jp/the-constitution-of-japan" onClick=”ga(‘send’, ‘event’, ‘Outbound’, ‘click’, 'top-github');”>GitHub</a></li>
 								<!-- <li></li> -->
 							</ul>
 						</div>
@@ -379,7 +379,7 @@ function moveArea() {
 						</form>
 						</center>
 						<br><br>
-						<p onClick="questionBtn()" onClick=”ga(‘send’, ‘event’, ‘Inbound’, ‘click’, 'question');”><img class="under" src="q.png" style="padding-top:50px;"></p>
+						<p onClick="questionBtn(); ga(‘send’, ‘event’, ‘Inbound’, ‘click’, 'question');"><img class="under" src="q.png" style="padding-top:50px;"></p>
 					</div><!-- area1 -->
 				</div><!-- inner -->
 			</div><!-- cnt -->
@@ -403,7 +403,7 @@ function moveArea() {
   								<div class="scroll-box">
   									<div id="result"></div>
   								</div>
-  								<a href="http://law.e-gov.go.jp/htmldata/S21/S21KE000.html"><img class="link" src="original.png"></a>
+  								<a href="http://law.e-gov.go.jp/htmldata/S21/S21KE000.html" onClick=”ga(‘send’, ‘event’, ‘Outbound’, ‘click’, 'result-original');”><img class="link" src="original.png"></a>
   							</div>
 						</div>
 						<img class="top" src="top.png" style="padding-top:60px;">
