@@ -236,6 +236,13 @@ list-style: none;
     clear: both;
   }
 }
+
+.scroll-box {
+	overflow: scroll;
+	width: 330px;
+	height: 380px;
+}
+
 -->
 </style>
 
@@ -384,13 +391,17 @@ function moveArea() {
 						<div class="item-container">
   							<div class="item">
   								<h2>プログラム実行結果</h2>
-  								<div id="target2"></div>
+  								<div class="scroll-box">
+  									<div id="target2"></div>
+  								</div>
   								<a href="https://github.com/bitlaw-jp/the-constitution-of-japan/blob/master/rules.pl"><img class="link" src="source.png"></a>
   								<!-- 編集についての説明に飛ばしたほうがいいかも -->
   							</div>
   							<div class="item">
   								<h2>プログラムの意味</h2>
-  								<div id="result"></div>
+  								<div class="scroll-box">
+  									<div id="result"></div>
+  								</div>
   								<a href="http://law.e-gov.go.jp/htmldata/S21/S21KE000.html"><img class="link" src="original.png"></a>
   							</div>
 						</div>
