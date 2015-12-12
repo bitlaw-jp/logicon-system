@@ -56,7 +56,7 @@ function functionName() {
                           "N       = 3");
       result = "国事行為の責任はどこにありますか？<br><br>内閣の責任です。(第3条)";
     select2.options[0] = new Option("国事行為");
-    select2.options[1] = new Option("");
+    select2.options[1] = new Option("国民");
   }
 
   else if (select1.options[select1.selectedIndex].value == "do") {
@@ -183,6 +183,37 @@ function functionName() {
     select2.options[0] = new Option("憲法");
     // select2.options[1] = new Option("");
   }
+
+  else if (select1.options[select1.selectedIndex].value == "confer") {
+    ele.innerHTML = "基本的人権は誰に与えられる？";
+    question = new Array("confer(基本的人権, X, N).<br>",
+                          "X       = 現在及び将来の国民,",
+                          "N       = 11");
+      result = "基本的人権は誰に与えられる？<br><br>基本的人権は、現在及び将来の国民に与えられます。(第11条)";
+    select2.options[0] = new Option("基本的人権");
+    // select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "maintain") {
+    ele.innerHTML = "国民が保持しなければならないものは？";
+    question = new Array("maintain(国民, X, N).<br>",
+                          "X       = 憲法が保障する自由及び権利(by(不断の努力)),",
+                          "N       = 12");
+      result = "国民が保持しなければならないものは？<br><br>国民は不断の努力によって、憲法が保障する自由及び権利を保持しなければならない。(第12条)";
+    select2.options[0] = new Option("国民");
+    // select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "ban") {
+    ele.innerHTML = "国民が禁止されていることは？";
+    question = new Array("ban(国民, X, N).<br>",
+                          "X       = 濫用(自由及び権利),",
+                          "N       = 12");
+    result = "国民が禁止されていることは？<br><br>国民は自由及び権利の濫用が禁止されています。(第12条)";
+    select2.options[0] = new Option("国民");
+    // select2.options[1] = new Option("");
+  }
+
 }
 
 function functionName2() {
@@ -315,8 +346,12 @@ function functionName2() {
                           "X       = 責任(内閣),",
                           "N       = 3");
       result = "国事行為の責任はどこにありますか？<br><br>内閣の責任です。(第3条)";
-    } else if (select2Val == "裁判官") {
-      ele.innerHTML = "裁判官はなにをすることができない？";
+    } else if (select2Val == "国民") {
+      ele.innerHTML = "国民の責任は？";
+      question = new Array("res(国民, X, N).<br>",
+                          "X       = 利用する(自由及び権利(for(公共の福祉))),",
+                          "N       = 12");
+      result = "国民の責任は？<br><br>国民は公共の福祉のために自由及び権利を利用する責任があります。(第12条)";
     }
   }
 
@@ -470,6 +505,43 @@ function functionName2() {
       ele.innerHTML = "裁判官はなにをすることができない？";
     }
   }
+
+  else if (select1Val == "confer") {
+    if (select2Val == "基本的人権") {
+      ele.innerHTML = "基本的人権は誰に与えられる？";
+    question = new Array("confer(基本的人権, X, N).<br>",
+                          "X       = 現在及び将来の国民,",
+                          "N       = 11");
+      result = "基本的人権は誰に与えられる？<br><br>基本的人権は、現在及び将来の国民に与えられます。(第11条)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "maintain") {
+    if (select2Val == "国民") {
+      ele.innerHTML = "国民が保持しなければならないものは？";
+    question = new Array("maintain(国民, X, N).<br>",
+                          "X       = 憲法が保障する自由及び権利(by(不断の努力)),",
+                          "N       = 12");
+      result = "国民が保持しなければならないものは？<br><br>国民は不断の努力によって、憲法が保障する自由及び権利を保持しなければならない。(第12条)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "ban") {
+    if (select2Val == "国民") {
+      ele.innerHTML = "国民が禁止されていることは？";
+      question = new Array("ban(国民, X, N).<br>",
+                          "X       = 濫用(自由及び権利),",
+                          "N       = 12");
+      result = "国民が禁止されていることは？<br><br>国民は自由及び権利の濫用が禁止されています。(第12条)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
 }
 
 
