@@ -46,7 +46,7 @@ function functionName() {
                           "N       = 3");
       result = "国事行為に必要なものは？<br><br>内閣の助言と内閣の承認です。(第3条)";
     select2.options[0] = new Option("国事行為");
-    select2.options[1] = new Option("");
+    select2.options[1] = new Option("生命、自由及び幸福追求の権利");
   }
 
   else if (select1.options[select1.selectedIndex].value == "res") {
@@ -214,6 +214,36 @@ function functionName() {
     // select2.options[1] = new Option("");
   }
 
+  else if (select1.options[select1.selectedIndex].value == "be_respected") {
+    ele.innerHTML = "国民はどのように尊重される？";
+    question = new Array("be_respected(国民, X, N).<br>",
+                          "X       = as(個人),",
+                          "N       = 13");
+    result = "国民はどのように尊重される？<br><br>国民は個人として尊重されます。(第13条)";
+    select2.options[0] = new Option("国民");
+    // select2.options[1] = new Option("");
+  }
+
+  else if (select1.options[select1.selectedIndex].value == "right") {
+    ele.innerHTML = "国民の権利は？";
+    question = new Array("right(国民, X, N).<br>",
+                          "X       = 生命、自由及び幸福追求の権利,",
+                          "N       = 13",
+                          "X       = 公務員の選定,",
+                          "N       = 15-1;",
+                          "X       = 公務員の罷免,",
+                          "N       = 15-1;",
+                          "X       = 健康で文化的な最低限度の生活を営む権利,",
+                          "N       = 25-1;",
+                          "X       = 能力に応じて、ひとしく教育を受ける権利(by(法律)),",
+                          "N       = 26-1;",
+                          "X       = 勤労,",
+                          "N       = 27-1");
+    result = "国民の権利は？<br><br>生命、自由及び幸福追求の権利(第13条)<br>公務員の選定、公務員の罷免(第15条第1項)<br>健康で文化的な最低限度の生活を営む権利(第25条第1項)<br>法律の定めるところにより、能力に応じて、ひとしく教育を受ける権利(第26条第1項)<br>勤労(第27条第1項)";
+    select2.options[0] = new Option("国民");
+    // select2.options[1] = new Option("");
+  }
+
 }
 
 function functionName2() {
@@ -334,8 +364,12 @@ function functionName2() {
                           "X       = 内閣の承認,",
                           "N       = 3");
       result = "国事行為に必要なものは？<br><br>内閣の助言と内閣の承認です。(第3条)";
-    } else if (select2Val == "裁判官") {
-      ele.innerHTML = "裁判官はなにをすることができない？";
+    } else if (select2Val == "生命、自由及び幸福追求の権利") {
+      ele.innerHTML = "生命、自由及び幸福追求の権利には何が必要？";
+      question = new Array("need(生命、自由及び幸福追求の権利, X, N).<br>",
+                          "X       = 最大の尊重(立法その他の国政の上で,extent(公共の福祉に反する場合)),",
+                          "N       = 13");
+      result = "生命、自由及び幸福追求の権利には何が必要？<br><br>公共の福祉に反する場合を除き、立法その他の国政の上で、最大の尊重が必要です。(第13条)";
     }
   }
 
@@ -537,6 +571,40 @@ function functionName2() {
                           "X       = 濫用(自由及び権利),",
                           "N       = 12");
       result = "国民が禁止されていることは？<br><br>国民は自由及び権利の濫用が禁止されています。(第12条)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "be_respected") {
+    if (select2Val == "国民") {
+      ele.innerHTML = "国民はどのように尊重される？";
+      question = new Array("be_respected(国民, X, N).<br>",
+                          "X       = as(個人),",
+                          "N       = 13");
+      result = "国民はどのように尊重される？<br><br>国民は個人として尊重されます。(第13条)";
+    } else if (select2Val == "裁判官") {
+      ele.innerHTML = "裁判官はなにをすることができない？";
+    }
+  }
+
+  else if (select1Val == "right") {
+    if (select2Val == "国民") {
+      ele.innerHTML = "国民の権利は？";
+    question = new Array("right(国民, X, N).<br>",
+                          "X       = 生命、自由及び幸福追求の権利,",
+                          "N       = 13",
+                          "X       = 公務員の選定,",
+                          "N       = 15-1;",
+                          "X       = 公務員の罷免,",
+                          "N       = 15-1;",
+                          "X       = 健康で文化的な最低限度の生活を営む権利,",
+                          "N       = 25-1;",
+                          "X       = 能力に応じて、ひとしく教育を受ける権利(by(法律)),",
+                          "N       = 26-1;",
+                          "X       = 勤労,",
+                          "N       = 27-1");
+    result = "国民の権利は？<br><br>生命、自由及び幸福追求の権利(第13条)<br>公務員の選定、公務員の罷免(第15条第1項)<br>健康で文化的な最低限度の生活を営む権利(第25条第1項)<br>法律の定めるところにより、能力に応じて、ひとしく教育を受ける権利(第26条第1項)<br>勤労(第27条第1項)";
     } else if (select2Val == "裁判官") {
       ele.innerHTML = "裁判官はなにをすることができない？";
     }
