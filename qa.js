@@ -626,7 +626,21 @@ function questionBtn() {
 
   var downloadLink = document.getElementById('question');
 addListener(downloadLink, 'click', function() {
-  ga('send', 'event', 'question-button', 'click', 'question');
+  ga('send', 'event', 'button', 'click', 'question');
+});
+}
+
+function resultGithub() {
+var downloadLink = document.getElementById('github');
+addListener(downloadLink, 'click', function() {
+  ga('send', 'event', 'button', 'click', 'result-github');
+});
+}
+
+function resultOrigin() {
+var downloadLink = document.getElementById('original');
+addListener(downloadLink, 'click', function() {
+  ga('send', 'event', 'button', 'click', 'result-original');
 });
 }
 
