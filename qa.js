@@ -626,7 +626,7 @@ function questionBtn() {
 
   var downloadLink = document.getElementById('question');
 addListener(downloadLink, 'click', function() {
-  ga('send', 'event', 'button', 'click', 'question');
+  ga('send', 'event', 'question-button', 'click', 'question');
 });
 }
 
