@@ -623,8 +623,17 @@ function questionBtn() {
   //var ele = document.getElementById("target2");
   //ele.innerHTML = question;
   initText();
+
+  var downloadLink = document.getElementById('question');
+addListener(downloadLink, 'click', function() {
+  ga('send', 'event', 'button', 'click', 'question');
+});
 }
 
+function addListener(element, type, callback) {
+ if (element.addEventListener) element.addEventListener(type, callback);
+ else if (element.attachEvent) element.attachEvent('on' + type, callback);
+}
 
 dy = 18; //　文字の縦方向の間隔
 speed = 30; //　文字の表示速度
