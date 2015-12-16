@@ -328,7 +328,20 @@ function moveArea() {
   ga('create', 'UA-55283652-4', 'auto');
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
-
+</script>
+<script>
+	var resultGithub = document.getElementById('github');
+addListener(resultGithub, 'click', function() {
+  ga('send', 'event', 'button', 'click', 'result-github');
+});
+var resultOriginal = document.getElementById('original');
+addListener(resultOriginal, 'click', function() {
+  ga('send', 'event', 'button', 'click', 'result-original');
+});
+function addListener(element, type, callback) {
+ if (element.addEventListener) element.addEventListener(type, callback);
+ else if (element.attachEvent) element.attachEvent('on' + type, callback);
+}
 </script>
 </head>
 <body onLoad="functionName()">

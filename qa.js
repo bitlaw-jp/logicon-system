@@ -624,8 +624,8 @@ function questionBtn() {
   //ele.innerHTML = question;
   initText();
 
-  var downloadLink = document.getElementById('question');
-addListener(downloadLink, 'click', function() {
+  var question = document.getElementById('question');
+addListener(question, 'click', function() {
   ga('send', 'event', 'button', 'click', 'question');
 });
 }
