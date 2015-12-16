@@ -630,19 +630,19 @@ addListener(downloadLink, 'click', function() {
 });
 }
 
-function resultGithub() {
-var downloadLink = document.getElementById('github');
-addListener(downloadLink, 'click', function() {
-  ga('send', 'event', 'button', 'click', 'result-github');
-});
-}
+// function resultGithub() {
+// var downloadLink = document.getElementById('github');
+// addListener(downloadLink, 'click', function() {
+//   ga('send', 'event', 'button', 'click', 'result-github');
+// });
+// }
 
-function resultOrigin() {
-var downloadLink = document.getElementById('original');
-addListener(downloadLink, 'click', function() {
-  ga('send', 'event', 'button', 'click', 'result-original');
-});
-}
+// function resultOrigin() {
+// var downloadLink = document.getElementById('original');
+// addListener(downloadLink, 'click', function() {
+//   ga('send', 'event', 'button', 'click', 'result-original');
+// });
+// }
 
 function addListener(element, type, callback) {
  if (element.addEventListener) element.addEventListener(type, callback);
